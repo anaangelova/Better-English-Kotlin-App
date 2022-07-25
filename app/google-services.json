@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "865488890271",
+    "project_id": "better-english-c10b3",
+    "storage_bucket": "better-english-c10b3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:865488890271:android:02fe3ef16802174bf135aa",
+        "android_client_info": {
+          "package_name": "com.example.betterenglish_mpipproject"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "865488890271-46gn214pv52lsgf40ue075q71jud3vum.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBP5cTuHzyjq2HwEkzQKVqig2a-3yHo280"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "865488890271-46gn214pv52lsgf40ue075q71jud3vum.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
