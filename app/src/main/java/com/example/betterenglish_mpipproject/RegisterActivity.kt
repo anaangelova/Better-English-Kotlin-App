@@ -12,6 +12,7 @@ import androidx.core.content.ContextCompat
 import com.example.betterenglish_mpipproject.authorization.FirebaseAuthProvider
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
+import com.google.firebase.auth.UserProfileChangeRequest
 
 class RegisterActivity : AppCompatActivity() {
 
@@ -116,6 +117,7 @@ class RegisterActivity : AppCompatActivity() {
                     sharedPreferencesService.saveData("uuid", currentUser?.uid.toString())
                     sharedPreferencesService.saveData("name", nameValue)
                     sharedPreferencesService.saveData("email", currentUser?.email.toString())
+                    mAuth!!.currentUser?.updateProfile(UserProfileChangeRequest.Builder().setDisplayName(nameValue).build())
 
                     Toast.makeText(this, "Registration successful.", Toast.LENGTH_SHORT).show()
                     navigateToLoginActivity()

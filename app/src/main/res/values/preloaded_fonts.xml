@@ -2,6 +2,10 @@
 <resources>
     <array name="preloaded_fonts" translatable="false">
         <item>@font/abril_fatface</item>
+        <item>@font/archivo</item>
+        <item>@font/archivo_black</item>
+        <item>@font/archivo_medium</item>
+        <item>@font/baloo</item>
         <item>@font/chonburi</item>
     </array>
 </resources>

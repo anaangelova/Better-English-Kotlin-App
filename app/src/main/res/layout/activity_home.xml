@@ -8,13 +8,14 @@
     tools:context=".HomeActivity">
 
     <ScrollView
-        android:layout_width="370dp"
-        android:layout_height="586dp"
+        android:id="@+id/scrollView2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.409"
+        app:layout_constraintVertical_bias="0.656"
         tools:ignore="SpeakableTextPresentCheck">
 
         <LinearLayout
@@ -22,81 +23,237 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <Button
-                android:id="@+id/randomWordButton"
+            <TextView
+                android:id="@+id/greetingTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:layout_weight="1"
-                android:text="Get random word" />
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:fontFamily="sans-serif-condensed-medium"
+                android:text="Hello,"
+                android:textColor="@android:color/holo_blue_dark"
+                android:textSize="34sp" />
+
+            <RelativeLayout
+                android:id="@+id/easyLevelContainer"
+                android:layout_width="match_parent"
+                android:layout_height="178dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/easy_level_container">
+
+                <TextView
+                    android:id="@+id/beginnerTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="30dp"
+                    android:fontFamily="@font/baloo"
+                    android:text="BEGINNER"
+                    android:textColor="#3F4F7E"
+                    android:textSize="34sp" />
+
+                <TextView
+                    android:id="@+id/passedBeginnerTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/beginnerTextView"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="0dp"
+                    android:fontFamily="@font/archivo"
+                    android:text="TextView"
+                    android:textAlignment="textStart"
+                    android:textColor="#120075"
+                    android:textSize="24sp" />
+
+                <Button
+                    android:id="@+id/playBeginnerButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/passedBeginnerTextView"
+                    android:layout_marginLeft="40dp"
+                    android:backgroundTint="#4ABBE8"
+                    android:text="Play"
+                    app:cornerRadius="15dp"
+                    app:icon="@drawable/play_button_arrowhead" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/mediumLevelContainer"
+                android:layout_width="match_parent"
+                android:layout_height="178dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/medium_level_container">
+
+                <TextView
+                    android:id="@+id/mediumTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="30dp"
+                    android:fontFamily="@font/baloo"
+                    android:text="INTERMEDIATE"
+                    android:textAlignment="viewStart"
+                    android:textColor="#3F4F7E"
+                    android:textSize="34sp" />
+
+                <TextView
+                    android:id="@+id/passedMediumTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/mediumTextView"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="0dp"
+                    android:fontFamily="@font/archivo"
+                    android:text="TextView"
+                    android:textAlignment="textStart"
+                    android:textColor="#120075"
+                    android:textSize="24sp" />
+                <Button
+                    android:id="@+id/playMediumButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/passedMediumTextView"
+                    android:layout_marginLeft="40dp"
+                    android:backgroundTint="#4ABBE8"
+                    android:text="Play"
+                    app:cornerRadius="15dp"
+                    app:icon="@drawable/play_button_arrowhead" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/hardLevelContainer"
+                android:layout_width="match_parent"
+                android:layout_height="178dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/hard_level_container">
+
+                <TextView
+                    android:id="@+id/hardTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="30dp"
+                    android:fontFamily="@font/baloo"
+                    android:text="ADVANCED"
+                    android:textAlignment="viewStart"
+                    android:textColor="#3F4F7E"
+                    android:textSize="34sp" />
+
+                <TextView
+                    android:id="@+id/passedHardTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/hardTextView"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="0dp"
+                    android:fontFamily="@font/archivo"
+                    android:text="TextView"
+                    android:textAlignment="textStart"
+                    android:textColor="#120075"
+                    android:textSize="24sp" />
+                <Button
+                    android:id="@+id/playHardButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/passedHardTextView"
+                    android:layout_marginLeft="40dp"
+                    android:backgroundTint="#4ABBE8"
+                    android:text="Play"
+                    app:cornerRadius="15dp"
+                    app:icon="@drawable/play_button_arrowhead" />
+            </RelativeLayout>
 
             <RelativeLayout
                 android:id="@+id/randomWordContainer"
                 android:layout_width="match_parent"
                 android:layout_height="178dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="30dp"
                 android:background="@drawable/word_of_the_day_container">
 
                 <TextView
-                    android:id="@+id/wordOfTheDayTextView"
-                    android:layout_width="182dp"
-                    android:layout_height="32dp"
-                    android:layout_marginLeft="110dp"
-                    android:layout_marginTop="10dp"
-                    android:fontFamily="sans-serif-medium"
-                    android:text="Word of the Day"
-                    android:textSize="20sp" />
+                    android:id="@+id/randomWordTextTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="0dp"
+                    android:layout_marginTop="5dp"
+                    android:fontFamily="@font/baloo"
+                    android:text="Lucky words"
+                    android:textAlignment="center"
+                    android:textColor="#3F4F7E"
+                    android:textSize="34sp" />
 
                 <TextView
                     android:id="@+id/randomWordTextView"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/wordOfTheDayTextView"
-                    android:layout_marginStart="120dp"
-                    android:layout_marginTop="5dp"
-                    android:fontFamily="casual"
+                    android:layout_below="@id/randomWordTextTextView"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginTop="0dp"
+                    android:layout_marginEnd="0dp"
+                    android:fontFamily="@font/archivo_medium"
                     android:text="TextView"
+                    android:textAlignment="center"
                     android:textColor="#000F65"
                     android:textSize="26sp"
                     android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/partOfSpeechTextView"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/randomWordTextView"
-                    android:layout_marginLeft="130dp"
+                    android:layout_marginLeft="0dp"
+                    android:fontFamily="@font/archivo"
                     android:text="TextView"
+                    android:textAlignment="center"
                     android:textColor="#000000"
                     android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/definitionTextView"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/partOfSpeechTextView"
-                    android:layout_marginLeft="60dp"
-                    android:text="TextView" />
+                    android:layout_marginLeft="35dp"
+                    android:layout_marginRight="5dp"
+                    android:fontFamily="@font/archivo"
+                    android:text="TextView"
+                    android:textAlignment="textStart" />
 
             </RelativeLayout>
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/logoutButton"
+                android:layout_width="58dp"
+                android:layout_height="61dp"
+                android:layout_marginLeft="320dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:clickable="true"
+                android:src="@drawable/logout"
+                app:backgroundTint="#6687DC"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.915"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.976"
+                tools:ignore="SpeakableTextPresentCheck" />
 
 
         </LinearLayout>
     </ScrollView>
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/logoutButton"
-        android:layout_width="58dp"
-        android:layout_height="61dp"
-        android:clickable="true"
-        android:src="@drawable/logout"
-        app:backgroundTint="#A0BBFF"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.915"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.976"
-        tools:ignore="SpeakableTextPresentCheck" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

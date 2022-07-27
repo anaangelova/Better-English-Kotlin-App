@@ -5,8 +5,12 @@
       <map>
         <entry key="..\:/Users/Latinka/Desktop/BetterEnglishMPIPProject/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.25833333333333336" />
         <entry key="..\:/Users/Latinka/Desktop/BetterEnglishMPIPProject/app/src/main/res/drawable/border.xml" value="0.25833333333333336" />
+        <entry key="..\:/Users/Latinka/Desktop/BetterEnglishMPIPProject/app/src/main/res/drawable/easy_level_container.xml" value="0.25833333333333336" />
+        <entry key="..\:/Users/Latinka/Desktop/BetterEnglishMPIPProject/app/src/main/res/drawable/hard_level_container.xml" value="0.25833333333333336" />
         <entry key="..\:/Users/Latinka/Desktop/BetterEnglishMPIPProject/app/src/main/res/drawable/highlighted_border.xml" value="0.25833333333333336" />
         <entry key="..\:/Users/Latinka/Desktop/BetterEnglishMPIPProject/app/src/main/res/drawable/ic_launcher_background.xml" value="0.25833333333333336" />
+        <entry key="..\:/Users/Latinka/Desktop/BetterEnglishMPIPProject/app/src/main/res/drawable/levels_container.xml" value="0.25833333333333336" />
+        <entry key="..\:/Users/Latinka/Desktop/BetterEnglishMPIPProject/app/src/main/res/drawable/medium_level_container.xml" value="0.25833333333333336" />
         <entry key="..\:/Users/Latinka/Desktop/BetterEnglishMPIPProject/app/src/main/res/drawable/rounded_outline.xml" value="0.25833333333333336" />
         <entry key="..\:/Users/Latinka/Desktop/BetterEnglishMPIPProject/app/src/main/res/drawable/word_of_the_day_container.xml" value="0.25833333333333336" />
         <entry key="..\:/Users/Latinka/Desktop/BetterEnglishMPIPProject/app/src/main/res/layout/activity_google_sign_in.xml" value="0.2421875" />

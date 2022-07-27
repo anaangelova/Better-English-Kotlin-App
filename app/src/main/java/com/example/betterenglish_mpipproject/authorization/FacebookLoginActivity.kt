@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.widget.Toast
 import com.example.betterenglish_mpipproject.HomeActivity
 import com.example.betterenglish_mpipproject.LoginActivity
+import com.example.betterenglish_mpipproject.SharedPreferencesService
 import com.facebook.CallbackManager
 import com.facebook.FacebookCallback
 import com.facebook.FacebookException
@@ -19,6 +20,7 @@ class FacebookLoginActivity : Activity() {
 
     private lateinit var auth: FirebaseAuth
     private lateinit var callbackManager: CallbackManager
+    private lateinit var sharedPreferencesService: SharedPreferencesService
 
     public override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,6 +41,9 @@ class FacebookLoginActivity : Activity() {
                             task ->
                         if (task.isSuccessful) {
                             val user = auth.currentUser
+                            sharedPreferencesService.saveData("uuid", "")
+                            sharedPreferencesService.saveData("name", user?.displayName!!)
+                            sharedPreferencesService.saveData("email", user.email!!)
                             updateUI()
                         } else {
                             Toast.makeText(baseContext, "Authentication failed.",
@@ -53,6 +58,8 @@ class FacebookLoginActivity : Activity() {
                 override fun onError(exception: FacebookException) {}
             }
         )
+
+        sharedPreferencesService = SharedPreferencesService(applicationContext)
 
     }
 

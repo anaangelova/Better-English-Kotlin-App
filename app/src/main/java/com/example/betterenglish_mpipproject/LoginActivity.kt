@@ -10,6 +10,7 @@ import com.example.betterenglish_mpipproject.authorization.FacebookLoginActivity
 import com.example.betterenglish_mpipproject.authorization.FirebaseAuthProvider
 import com.example.betterenglish_mpipproject.authorization.GoogleLoginActivity
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseUser
 
 class LoginActivity : AppCompatActivity() {
 
@@ -80,7 +81,6 @@ class LoginActivity : AppCompatActivity() {
     override fun onStart() {
         super.onStart()
         if (checkIfLoggedIn()) {
-            // navigate to the main activity
             navigateOut()
         }
     }
@@ -91,6 +91,10 @@ class LoginActivity : AppCompatActivity() {
                 this
             ) { task ->
                 if (task.isSuccessful) {
+                    val currentUser: FirebaseUser? = mAuth?.currentUser
+                    sharedPreferencesService.saveData("uuid", currentUser?.uid.toString())
+                    sharedPreferencesService.saveData("name", currentUser?.displayName.toString())
+                    sharedPreferencesService.saveData("email", currentUser?.email.toString())
                     navigateOut()
                 } else {
                     Toast.makeText(this, "Login failed.", Toast.LENGTH_SHORT).show()
