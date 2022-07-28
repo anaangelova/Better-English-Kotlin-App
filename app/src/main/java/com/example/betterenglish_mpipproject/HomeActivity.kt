@@ -34,6 +34,7 @@ class HomeActivity : AppCompatActivity() {
     private lateinit var homeActivityViewModel: HomeActivityViewModel
     private lateinit var sharedPreferencesService: SharedPreferencesService
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
@@ -85,12 +86,21 @@ class HomeActivity : AppCompatActivity() {
             navigateToLoginActivity()
         }
 
+        val easyButton: Button = findViewById(R.id.playBeginnerButton)
+        easyButton.setOnClickListener {
+            val intent = Intent(this, QuizActivity::class.java)
+            intent.putExtra("userId",mAuth?.currentUser?.uid)
+            intent.putExtra("level",0)
+            startActivity(intent)
+            finish()
+        }
+
         val mediumButton: Button = findViewById(R.id.playMediumButton)
         mediumButton.setOnClickListener {
             homeActivityViewModel.getLevelsForUser(mAuth?.currentUser?.uid!!).observe(this, {
                 var list = it.levels
                 var mediumLevel: Level? =
-                    list?.first { el -> el.difficulty.toString() == "INTERMEDIATE" }
+                    list?.last { el -> el.difficulty.toString() == "INTERMEDIATE" }
 
                 if(!mediumLevel?.isUnlocked!!) {
                     val builder = AlertDialog.Builder(this)
@@ -101,6 +111,12 @@ class HomeActivity : AppCompatActivity() {
                         .setNeutralButton("OK") { _, _ -> }
                    builder.create().show()
 
+                } else {
+                    val intent = Intent(this, QuizActivity::class.java)
+                    intent.putExtra("userId",mAuth?.currentUser?.uid)
+                    intent.putExtra("level",1)
+                    startActivity(intent)
+                  finish()
                 }
 
             })
@@ -110,7 +126,7 @@ class HomeActivity : AppCompatActivity() {
             homeActivityViewModel.getLevelsForUser(mAuth?.currentUser?.uid!!).observe(this, {
                 var list = it.levels
                 var hardLevel: Level? =
-                    list?.first { el -> el.difficulty.toString() == "ADVANCED" }
+                    list?.last { el -> el.difficulty.toString() == "ADVANCED" }
 
                 if(!hardLevel?.isUnlocked!!) {
                     val builder = AlertDialog.Builder(this)
@@ -121,6 +137,12 @@ class HomeActivity : AppCompatActivity() {
                         .setNeutralButton("OK") { _, _ -> }
                     builder.create().show()
 
+                } else {
+                    val intent = Intent(this, QuizActivity::class.java)
+                    intent.putExtra("userId",mAuth?.currentUser?.uid)
+                    intent.putExtra("level",2)
+                    startActivity(intent)
+                   finish()
                 }
 
             })
@@ -153,11 +175,11 @@ class HomeActivity : AppCompatActivity() {
                 populateLevelsUI(beginnerTextView,intermediateTextView,advancedTextView, easyLevel, mediumLevel, hardLevel)
             } else {
                 easyLevel =
-                    it.levels?.first { el -> el.difficulty.toString() == "BEGINNER" }!!
+                    it.levels?.last { el -> el.difficulty.toString() == "BEGINNER" }!!
                 mediumLevel =
-                    it.levels?.first { el -> el.difficulty.toString() == "INTERMEDIATE" }!!
+                    it.levels?.last { el -> el.difficulty.toString() == "INTERMEDIATE" }!!
                 hardLevel =
-                    it.levels?.first { el -> el.difficulty.toString() == "ADVANCED" }!!
+                    it.levels?.last { el -> el.difficulty.toString() == "ADVANCED" }!!
                 populateLevelsUI(beginnerTextView,intermediateTextView,advancedTextView, easyLevel, mediumLevel, hardLevel)
             }
         })
@@ -166,11 +188,11 @@ class HomeActivity : AppCompatActivity() {
 
     private fun populateLevelsUI(beginnerTextView: TextView, intermediateTextView: TextView, advancedTextView: TextView, easyLevel: Level, mediumLevel: Level, hardLevel: Level) {
         beginnerTextView.text = ""
-        beginnerTextView.text = easyLevel.passedQuestions.toString() + " / 10 passed questions"
+        beginnerTextView.text = easyLevel.passedQuestions.toString() + " / 13 passed questions"
         intermediateTextView.text = ""
-        intermediateTextView.text = mediumLevel.passedQuestions.toString() + " / 10 passed questions"
+        intermediateTextView.text = mediumLevel.passedQuestions.toString() + " / 13 passed questions"
         advancedTextView.text = ""
-        advancedTextView.text = hardLevel.passedQuestions.toString() + " / 10 passed questions"
+        advancedTextView.text = hardLevel.passedQuestions.toString() + " / 13 passed questions"
     }
 
     private fun populateRandomWordContainter() {

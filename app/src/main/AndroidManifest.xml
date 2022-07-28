@@ -20,12 +20,16 @@
         android:theme="@style/Theme.BetterEnglishMPIPProject"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".ReportActivity"
+            android:exported="false" />
+        <activity
+            android:name=".QuizActivity"
+            android:exported="false" />
+        <activity
             android:name=".HomeActivity"
             android:exported="true"
             android:label="Better English"
-            android:theme="@style/Theme.BetterEnglishMPIPProject.NoActionBar">
-
-        </activity>
+            android:theme="@style/Theme.BetterEnglishMPIPProject.NoActionBar" />
         <activity
             android:name=".RegisterActivity"
             android:exported="false" />

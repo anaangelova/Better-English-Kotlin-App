@@ -29,9 +29,6 @@ class HomeActivityViewModel(application: Application) : AndroidViewModel(applica
         wordLiveData = MutableLiveData()
     }
 
-    fun getLevels(): LiveData<com.example.betterenglish_mpipproject.model.Response> {
-        return levelRepository.getLevels()
-    }
 
     fun getLevelsForUser(userId: String): LiveData<com.example.betterenglish_mpipproject.model.Response> {
         return levelRepository.getLevelsForUser(userId)

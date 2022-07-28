@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/linearLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F6FDFF"
+    android:orientation="vertical"
+    tools:context=".QuizActivity">
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="20dp"
+        android:max="104"
+        android:min="0"
+        android:progressTint="#14C600"
+        app:layout_constraintBottom_toTopOf="@+id/questionDescriptionTextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/questionDescriptionTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="5dp"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:text="Question description ..."
+        android:textColor="#3F4F7E"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.296"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.177" />
+
+    <LinearLayout
+        android:id="@+id/linearLayoutContainer"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:orientation="vertical"></LinearLayout>
+
+    <RadioGroup
+        android:id="@+id/answersRadioGroup"
+        android:layout_width="340dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/questionDescriptionTextView"
+        app:layout_constraintVertical_bias="0.189">
+
+        <RadioButton
+            android:id="@+id/firstOptionRadioButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="first"
+            android:textColor="#120075"
+            android:textSize="24sp" />
+
+        <RadioButton
+            android:id="@+id/secondOptionRadioButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="second"
+            android:textColor="#120075"
+            android:textSize="24sp" />
+
+        <RadioButton
+            android:id="@+id/thirdOptionRadioButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="third"
+            android:textColor="#120075"
+            android:textSize="24sp" />
+
+        <RadioButton
+            android:id="@+id/fourthOptionRadioButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="fourth"
+            android:textColor="#120075"
+            android:textSize="24sp" />
+
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/nextButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="140dp"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="#0008A5"
+        android:text="Next"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.829"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/answersRadioGroup"
+        app:layout_constraintVertical_bias="0.743" />
+
+</LinearLayout>
