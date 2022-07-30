@@ -7,18 +7,21 @@
     android:layout_height="match_parent"
     android:background="#F6FDFF"
     android:orientation="vertical"
-    tools:context=".QuizActivity">
+    tools:context=".ui.quiz.QuizActivity">
 
     <ProgressBar
         android:id="@+id/progressBar"
         style="?android:attr/progressBarStyleHorizontal"
         android:layout_width="match_parent"
-        android:layout_height="35dp"
+        android:layout_height="30dp"
         android:layout_marginLeft="0dp"
         android:layout_marginTop="20dp"
         android:max="104"
         android:min="0"
-        android:progressTint="#14C600"
+        android:paddingVertical="0dp"
+        android:pointerIcon="arrow"
+        android:progressTint="#4CAF50"
+        android:scaleY="2"
         app:layout_constraintBottom_toTopOf="@+id/questionDescriptionTextView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -26,15 +29,18 @@
 
     <TextView
         android:id="@+id/questionDescriptionTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_marginLeft="10dp"
         android:layout_marginTop="15dp"
-        android:layout_marginBottom="5dp"
-        android:fontFamily="sans-serif-condensed-medium"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="0dp"
+        android:fontFamily="sans-serif-condensed"
         android:text="Question description ..."
+        android:textAlignment="center"
         android:textColor="#3F4F7E"
-        android:textSize="24sp"
+        android:textSize="30sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.296"
@@ -46,7 +52,7 @@
         android:id="@+id/linearLayoutContainer"
         android:layout_width="match_parent"
         android:layout_height="150dp"
-        android:orientation="vertical"></LinearLayout>
+        android:orientation="vertical"/>
 
     <RadioGroup
         android:id="@+id/answersRadioGroup"
@@ -65,44 +71,59 @@
             android:id="@+id/firstOptionRadioButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="2dp"
+            android:fontFamily="@font/archivo"
+            android:paddingLeft="10dp"
             android:text="first"
-            android:textColor="#120075"
-            android:textSize="24sp" />
+            android:textColor="#1A237E"
+            android:textSize="28sp" />
 
         <RadioButton
             android:id="@+id/secondOptionRadioButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="2dp"
+            android:fontFamily="@font/archivo"
+            android:paddingLeft="10dp"
             android:text="second"
-            android:textColor="#120075"
-            android:textSize="24sp" />
+            android:textColor="#1A237E"
+            android:textSize="28sp" />
 
         <RadioButton
             android:id="@+id/thirdOptionRadioButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="2dp"
+            android:fontFamily="@font/archivo"
+            android:paddingLeft="10dp"
             android:text="third"
-            android:textColor="#120075"
-            android:textSize="24sp" />
+            android:textColor="#1A237E"
+            android:textSize="28sp" />
 
         <RadioButton
             android:id="@+id/fourthOptionRadioButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="0dp"
+            android:fontFamily="@font/archivo"
+            android:paddingLeft="10dp"
             android:text="fourth"
-            android:textColor="#120075"
-            android:textSize="24sp" />
+            android:textColor="#1A237E"
+            android:textSize="28sp" />
 
     </RadioGroup>
 
     <Button
         android:id="@+id/nextButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="140dp"
+        android:layout_width="120dp"
+        android:layout_height="60dp"
+        android:layout_gravity="center"
+        android:layout_marginLeft="0dp"
         android:layout_marginTop="20dp"
-        android:backgroundTint="#0008A5"
+        android:backgroundTint="#183878"
         android:text="Next"
+        android:textAlignment="center"
+        app:cornerRadius="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.829"

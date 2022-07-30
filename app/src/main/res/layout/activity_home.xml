@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#EBFAFF"
-    tools:context=".HomeActivity">
+    tools:context=".ui.home.HomeActivity">
 
     <ScrollView
         android:id="@+id/scrollView2"
@@ -13,9 +13,10 @@
         android:layout_height="match_parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.656"
+        app:layout_constraintVertical_bias="1.0"
         tools:ignore="SpeakableTextPresentCheck">
 
         <LinearLayout
@@ -33,12 +34,12 @@
                 android:fontFamily="sans-serif-condensed-medium"
                 android:text="Hello,"
                 android:textColor="@android:color/holo_blue_dark"
-                android:textSize="34sp" />
+                android:textSize="42dp" />
 
             <RelativeLayout
                 android:id="@+id/easyLevelContainer"
                 android:layout_width="match_parent"
-                android:layout_height="178dp"
+                android:layout_height="200dp"
                 android:layout_marginLeft="15dp"
                 android:layout_marginRight="30dp"
                 android:layout_marginBottom="20dp"
@@ -47,14 +48,14 @@
                 <TextView
                     android:id="@+id/beginnerTextView"
                     android:layout_width="match_parent"
-                    android:layout_height="40dp"
+                    android:layout_height="50dp"
 
                     android:layout_marginLeft="20dp"
                     android:layout_marginTop="30dp"
                     android:fontFamily="@font/baloo"
                     android:text="BEGINNER"
                     android:textColor="#3F4F7E"
-                    android:textSize="34sp" />
+                    android:textSize="40sp" />
 
                 <TextView
                     android:id="@+id/passedBeginnerTextView"
@@ -71,10 +72,11 @@
 
                 <Button
                     android:id="@+id/playBeginnerButton"
-                    android:layout_width="wrap_content"
+                    android:layout_width="110dp"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/passedBeginnerTextView"
-                    android:layout_marginLeft="40dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="10dp"
                     android:backgroundTint="#4ABBE8"
                     android:text="Play"
                     app:cornerRadius="15dp"
@@ -84,7 +86,7 @@
             <RelativeLayout
                 android:id="@+id/mediumLevelContainer"
                 android:layout_width="match_parent"
-                android:layout_height="178dp"
+                android:layout_height="200dp"
                 android:layout_marginLeft="15dp"
                 android:layout_marginRight="30dp"
                 android:layout_marginBottom="20dp"
@@ -93,7 +95,7 @@
                 <TextView
                     android:id="@+id/mediumTextView"
                     android:layout_width="match_parent"
-                    android:layout_height="40dp"
+                    android:layout_height="50dp"
 
                     android:layout_marginLeft="20dp"
                     android:layout_marginTop="30dp"
@@ -101,7 +103,7 @@
                     android:text="INTERMEDIATE"
                     android:textAlignment="viewStart"
                     android:textColor="#3F4F7E"
-                    android:textSize="34sp" />
+                    android:textSize="40sp" />
 
                 <TextView
                     android:id="@+id/passedMediumTextView"
@@ -115,12 +117,14 @@
                     android:textAlignment="textStart"
                     android:textColor="#120075"
                     android:textSize="24sp" />
+
                 <Button
                     android:id="@+id/playMediumButton"
-                    android:layout_width="wrap_content"
+                    android:layout_width="110dp"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/passedMediumTextView"
-                    android:layout_marginLeft="40dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="10dp"
                     android:backgroundTint="#4ABBE8"
                     android:text="Play"
                     app:cornerRadius="15dp"
@@ -130,7 +134,7 @@
             <RelativeLayout
                 android:id="@+id/hardLevelContainer"
                 android:layout_width="match_parent"
-                android:layout_height="178dp"
+                android:layout_height="200dp"
                 android:layout_marginLeft="15dp"
                 android:layout_marginRight="30dp"
                 android:layout_marginBottom="20dp"
@@ -139,7 +143,7 @@
                 <TextView
                     android:id="@+id/hardTextView"
                     android:layout_width="match_parent"
-                    android:layout_height="40dp"
+                    android:layout_height="50dp"
 
                     android:layout_marginLeft="20dp"
                     android:layout_marginTop="30dp"
@@ -147,7 +151,7 @@
                     android:text="ADVANCED"
                     android:textAlignment="viewStart"
                     android:textColor="#3F4F7E"
-                    android:textSize="34sp" />
+                    android:textSize="40sp" />
 
                 <TextView
                     android:id="@+id/passedHardTextView"
@@ -161,12 +165,14 @@
                     android:textAlignment="textStart"
                     android:textColor="#120075"
                     android:textSize="24sp" />
+
                 <Button
                     android:id="@+id/playHardButton"
-                    android:layout_width="wrap_content"
+                    android:layout_width="110dp"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/passedHardTextView"
-                    android:layout_marginLeft="40dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="10dp"
                     android:backgroundTint="#4ABBE8"
                     android:text="Play"
                     app:cornerRadius="15dp"
@@ -176,7 +182,7 @@
             <RelativeLayout
                 android:id="@+id/randomWordContainer"
                 android:layout_width="match_parent"
-                android:layout_height="178dp"
+                android:layout_height="230dp"
                 android:layout_marginLeft="15dp"
                 android:layout_marginRight="30dp"
                 android:background="@drawable/word_of_the_day_container">
@@ -184,19 +190,19 @@
                 <TextView
                     android:id="@+id/randomWordTextTextView"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="45dp"
                     android:layout_marginLeft="0dp"
                     android:layout_marginTop="5dp"
                     android:fontFamily="@font/baloo"
-                    android:text="Lucky words"
+                    android:text="LUCKY  WORDS"
                     android:textAlignment="center"
-                    android:textColor="#3F4F7E"
+                    android:textColor="#1B5E20"
                     android:textSize="34sp" />
 
                 <TextView
                     android:id="@+id/randomWordTextView"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="45dp"
                     android:layout_below="@id/randomWordTextTextView"
                     android:layout_marginStart="0dp"
                     android:layout_marginTop="0dp"
@@ -205,7 +211,7 @@
                     android:text="TextView"
                     android:textAlignment="center"
                     android:textColor="#000F65"
-                    android:textSize="26sp"
+                    android:textSize="34sp"
                     android:textStyle="bold" />
 
                 <TextView
@@ -218,6 +224,7 @@
                     android:text="TextView"
                     android:textAlignment="center"
                     android:textColor="#000000"
+                    android:textSize="20dp"
                     android:textStyle="bold" />
 
                 <TextView
@@ -225,11 +232,13 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/partOfSpeechTextView"
-                    android:layout_marginLeft="35dp"
-                    android:layout_marginRight="5dp"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginBottom="10dp"
                     android:fontFamily="@font/archivo"
                     android:text="TextView"
-                    android:textAlignment="textStart" />
+                    android:textAlignment="textStart"
+                    android:textSize="20sp" />
 
             </RelativeLayout>
 
