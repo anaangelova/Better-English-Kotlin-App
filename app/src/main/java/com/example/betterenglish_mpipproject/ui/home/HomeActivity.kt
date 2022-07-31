@@ -20,6 +20,7 @@ import com.example.betterenglish_mpipproject.domain.level.model.Level
 import com.example.betterenglish_mpipproject.domain.word.RandomWord
 import com.example.betterenglish_mpipproject.data.WordsApi
 import com.example.betterenglish_mpipproject.data.WordsApiClient
+import com.example.betterenglish_mpipproject.domain.hub.KnowledgeHubActivity
 import com.example.betterenglish_mpipproject.ui.login.LoginActivity
 import com.example.betterenglish_mpipproject.ui.quiz.QuizActivity
 import com.example.betterenglish_mpipproject.util.SharedPreferencesService
@@ -169,6 +170,11 @@ class HomeActivity : AppCompatActivity() {
             })
         }
 
+        val openAdditionalResourcesButton: Button = findViewById(R.id.openAdditionalResourcesButton)
+        openAdditionalResourcesButton.setOnClickListener {
+            val intent = Intent(this, KnowledgeHubActivity::class.java)
+            startActivity(intent)
+        }
 
     }
 

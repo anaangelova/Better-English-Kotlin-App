@@ -12,13 +12,19 @@
         android:allowBackup="true"
         android:allowClearUserData="true"
         android:hardwareAccelerated="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/better_english_icon"
         android:label="Better English"
         android:largeHeap="true"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@mipmap/better_english_icon_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.BetterEnglishMPIPProject"
         android:usesCleartextTraffic="true">
+        <activity
+            android:name=".ui.vocabulary.VocabularyActivity"
+            android:exported="false" />
+        <activity
+            android:name=".domain.hub.KnowledgeHubActivity"
+            android:exported="false" />
         <activity
             android:name=".ui.report.ReportActivity"
             android:exported="false" />
@@ -55,10 +61,10 @@
             android:resource="@array/preloaded_fonts" />
         <meta-data
             android:name="com.facebook.sdk.ApplicationId"
-            android:value="@string/facebook_app_id" />
+            android:value="" />
         <meta-data
             android:name="com.facebook.sdk.ClientToken"
-            android:value="@string/facebook_client_token" />
+            android:value="" />
     </application>
 
 </manifest>

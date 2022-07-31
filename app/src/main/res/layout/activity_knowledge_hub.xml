@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginBottom="0dp"
+    android:background="#EBFAFF"
+    android:orientation="vertical"
+    tools:context=".domain.hub.KnowledgeHubActivity">
+
+    <RelativeLayout
+        android:id="@+id/grammarContainer"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/grammar_container"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/grammarTextView"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+
+            android:layout_marginLeft="0dp"
+            android:layout_marginTop="0dp"
+            android:fontFamily="@font/baloo"
+            android:text="GRAMMAR"
+            android:textAlignment="center"
+            android:textColor="#3F4F7E"
+            android:textSize="40sp" />
+
+        <Button
+            android:id="@+id/learnGrammarButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/grammarTextView"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="5dp"
+            android:backgroundTint="#E91E63"
+            android:text="Learn"
+            app:cornerRadius="15dp"
+            app:icon="@drawable/right_arrow"
+            app:iconGravity="end" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/vocabularyContainer"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/vocabulary_container"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/vocabularyTextView"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+
+            android:layout_marginLeft="0dp"
+            android:layout_marginTop="0dp"
+            android:fontFamily="@font/baloo"
+            android:text="VOCABULARY"
+            android:textAlignment="center"
+            android:textColor="#3F4F7E"
+            android:textSize="40sp" />
+
+        <Button
+            android:id="@+id/learnVocabularyButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/vocabularyTextView"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="5dp"
+            android:backgroundTint="#E91E63"
+            android:text="Learn"
+            app:cornerRadius="15dp"
+            app:icon="@drawable/right_arrow"
+            app:iconGravity="end" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/listeningContainer"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginBottom="60dp"
+        android:background="@drawable/listening_container"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/listeningTextView"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+
+            android:layout_marginLeft="0dp"
+            android:layout_marginTop="0dp"
+            android:fontFamily="@font/baloo"
+            android:text="LISTENING"
+            android:textAlignment="center"
+            android:textColor="#3F4F7E"
+            android:textSize="40sp" />
+
+        <Button
+            android:id="@+id/learnListeningButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/listeningTextView"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="5dp"
+            android:backgroundTint="#E91E63"
+            android:text="Learn"
+            app:cornerRadius="15dp"
+            app:icon="@drawable/right_arrow"
+            app:iconGravity="end" />
+    </RelativeLayout>
+
+
+</LinearLayout>

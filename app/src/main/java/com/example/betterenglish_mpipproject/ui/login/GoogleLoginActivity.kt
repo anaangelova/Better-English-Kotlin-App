@@ -28,7 +28,7 @@ class GoogleLoginActivity: Activity() {
         super.onCreate(savedInstanceState)
         auth = FirebaseAuthProvider.getFirebaseAuth()
         googleSignInOptions = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-            .requestIdToken("865488890271-jn2q8rcd4nsbh3g85mq0slri0589aqep.apps.googleusercontent.com")
+            .requestIdToken("")
             .requestEmail()
             .build()
 

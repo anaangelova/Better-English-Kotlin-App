@@ -27,6 +27,7 @@ import com.example.betterenglish_mpipproject.domain.question.model.SentenceQuest
 import com.example.betterenglish_mpipproject.domain.question.model.SynonymsAndAntonymsQuestion
 import com.example.betterenglish_mpipproject.ui.home.HomeActivity
 import com.example.betterenglish_mpipproject.util.AttemptStatus
+import com.google.android.material.snackbar.Snackbar
 import java.util.*
 
 class QuizActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
@@ -127,9 +128,13 @@ class QuizActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
         attempt.answersForAttempt.add(currentQuestionIndex, checkedAnswer == correctAnswer)
 
         if (checkedAnswer == correctAnswer) {
-            Toast.makeText(this, "Correct!", Toast.LENGTH_SHORT).show()
+            val toastMessage =  Toast.makeText(this, "Correct!", Toast.LENGTH_SHORT)
+            toastMessage.setGravity(Gravity.BOTTOM,0,0)
+            toastMessage.show()
         } else {
-            Toast.makeText(this, "Wrong!", Toast.LENGTH_SHORT).show()
+            val toastMessage =   Toast.makeText(this, "Wrong!", Toast.LENGTH_SHORT)
+            toastMessage.setGravity(Gravity.BOTTOM,0,0)
+            toastMessage.show()
         }
 
         val progressBar: ProgressBar = findViewById(R.id.progressBar)
@@ -167,6 +172,13 @@ class QuizActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
                         nextLevel.isUnlocked = false
                         nextLevel.passedQuestions = 0
                         quizActivityViewModel.updateLevelForUser(nextLevel)
+
+                        if(attempt.difficulty.name == "BEGINNER") {
+                            val lastLevel: Level = levelsForUser.last { el -> el.difficulty?.ordinal == attempt.difficulty.ordinal + 2 }
+                            lastLevel.isUnlocked = false
+                            lastLevel.passedQuestions = 0
+                            quizActivityViewModel.updateLevelForUser(lastLevel)
+                        }
                     }
                 }
 
@@ -293,7 +305,9 @@ class QuizActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
         }
         nextButton.setOnClickListener {
             if (radioGroup.checkedRadioButtonId == -1) {
-                Toast.makeText(this, "Please select an option", Toast.LENGTH_SHORT).show()
+                val toastMessage =   Toast.makeText(this, "Please select an option.", Toast.LENGTH_SHORT)
+                toastMessage.setGravity(Gravity.BOTTOM,0,0)
+                toastMessage.show()
             } else {
                 checkAnswer()
             }

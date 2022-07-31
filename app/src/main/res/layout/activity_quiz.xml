@@ -34,12 +34,12 @@
         android:layout_marginLeft="10dp"
         android:layout_marginTop="15dp"
         android:layout_marginRight="10dp"
-        android:layout_marginBottom="0dp"
+        android:layout_marginBottom="5dp"
         android:fontFamily="sans-serif-condensed"
         android:text="Question description ..."
         android:textAlignment="center"
         android:textColor="#3F4F7E"
-        android:textSize="30sp"
+        android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -72,44 +72,48 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="2dp"
+            android:buttonTint="#44E3FF"
             android:fontFamily="@font/archivo"
             android:paddingLeft="10dp"
             android:text="first"
             android:textColor="#1A237E"
-            android:textSize="28sp" />
+            android:textSize="24sp" />
 
         <RadioButton
             android:id="@+id/secondOptionRadioButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="2dp"
+            android:buttonTint="#44E3FF"
             android:fontFamily="@font/archivo"
             android:paddingLeft="10dp"
             android:text="second"
             android:textColor="#1A237E"
-            android:textSize="28sp" />
+            android:textSize="24sp" />
 
         <RadioButton
             android:id="@+id/thirdOptionRadioButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="2dp"
+            android:buttonTint="#44E3FF"
             android:fontFamily="@font/archivo"
             android:paddingLeft="10dp"
             android:text="third"
             android:textColor="#1A237E"
-            android:textSize="28sp" />
+            android:textSize="24sp" />
 
         <RadioButton
             android:id="@+id/fourthOptionRadioButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="0dp"
+            android:buttonTint="#44E3FF"
             android:fontFamily="@font/archivo"
             android:paddingLeft="10dp"
             android:text="fourth"
             android:textColor="#1A237E"
-            android:textSize="28sp" />
+            android:textSize="24sp" />
 
     </RadioGroup>
 
@@ -119,7 +123,7 @@
         android:layout_height="60dp"
         android:layout_gravity="center"
         android:layout_marginLeft="0dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="50dp"
         android:backgroundTint="#183878"
         android:text="Next"
         android:textAlignment="center"
