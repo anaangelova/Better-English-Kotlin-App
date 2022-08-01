@@ -20,7 +20,7 @@ import com.example.betterenglish_mpipproject.domain.level.model.Level
 import com.example.betterenglish_mpipproject.domain.word.RandomWord
 import com.example.betterenglish_mpipproject.data.WordsApi
 import com.example.betterenglish_mpipproject.data.WordsApiClient
-import com.example.betterenglish_mpipproject.domain.hub.KnowledgeHubActivity
+import com.example.betterenglish_mpipproject.ui.hub.KnowledgeHubActivity
 import com.example.betterenglish_mpipproject.ui.login.LoginActivity
 import com.example.betterenglish_mpipproject.ui.quiz.QuizActivity
 import com.example.betterenglish_mpipproject.util.SharedPreferencesService
@@ -51,6 +51,9 @@ class HomeActivity : AppCompatActivity() {
         sharedPreferencesService = SharedPreferencesService(applicationContext)
         wordsApi = WordsApiClient.getWordsApi()!!
 
+        FacebookSdk.sdkInitialize(applicationContext)
+        AppEventsLogger.activateApp(application)
+
         homeActivityViewModel = ViewModelProvider(this).get(HomeActivityViewModel::class.java)
         homeActivityViewModel.getWordLiveData().observe(this, object : Observer<RandomWord> {
             override fun onChanged(t: RandomWord?) {
@@ -72,8 +75,6 @@ class HomeActivity : AppCompatActivity() {
         val username = sharedPreferencesService.getData("name")
         greetingsTextView.text = "Hello, " + username
 
-        FacebookSdk.sdkInitialize(applicationContext)
-        AppEventsLogger.activateApp(application)
 
         val logoutButton: FloatingActionButton = findViewById(R.id.logoutButton)
         logoutButton.setOnClickListener {
@@ -100,6 +101,7 @@ class HomeActivity : AppCompatActivity() {
             intent.putExtra("userId", mAuth?.currentUser?.uid)
             intent.putExtra("level", 0)
             startActivity(intent)
+            overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left)
             finish()
         }
 
@@ -131,6 +133,7 @@ class HomeActivity : AppCompatActivity() {
                     intent.putExtra("userId", mAuth?.currentUser?.uid)
                     intent.putExtra("level", 1)
                     startActivity(intent)
+                    overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left)
                     finish()
                 }
 
@@ -164,6 +167,7 @@ class HomeActivity : AppCompatActivity() {
                     intent.putExtra("userId", mAuth?.currentUser?.uid)
                     intent.putExtra("level", 2)
                     startActivity(intent)
+                    overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left)
                     finish()
                 }
 
@@ -174,6 +178,10 @@ class HomeActivity : AppCompatActivity() {
         openAdditionalResourcesButton.setOnClickListener {
             val intent = Intent(this, KnowledgeHubActivity::class.java)
             startActivity(intent)
+            overridePendingTransition(
+                R.anim.slide_in_right,
+                R.anim.slide_out_left
+            )
         }
 
     }
@@ -275,6 +283,7 @@ class HomeActivity : AppCompatActivity() {
     private fun navigateToLoginActivity() {
         val intent = Intent(this, LoginActivity::class.java)
         startActivity(intent)
+        overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right)
         finish()
     }
 

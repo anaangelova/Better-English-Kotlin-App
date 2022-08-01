@@ -23,7 +23,7 @@
             android:name=".ui.vocabulary.VocabularyActivity"
             android:exported="false" />
         <activity
-            android:name=".domain.hub.KnowledgeHubActivity"
+            android:name="com.example.betterenglish_mpipproject.ui.hub.KnowledgeHubActivity"
             android:exported="false" />
         <activity
             android:name=".ui.report.ReportActivity"
@@ -61,10 +61,10 @@
             android:resource="@array/preloaded_fonts" />
         <meta-data
             android:name="com.facebook.sdk.ApplicationId"
-            android:value="" />
+            android:value="@string/facebook_app_id" />
         <meta-data
             android:name="com.facebook.sdk.ClientToken"
-            android:value="" />
+            android:value="@string/facebook_client_token" />
     </application>
 
 </manifest>

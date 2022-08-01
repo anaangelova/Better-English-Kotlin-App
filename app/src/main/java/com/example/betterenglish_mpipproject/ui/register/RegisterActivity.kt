@@ -90,6 +90,7 @@ class RegisterActivity : AppCompatActivity() {
     private fun navigateToLoginActivity() {
         val intent = Intent(this, LoginActivity::class.java)
         startActivity(intent)
+        overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right)
         finish()
     }
 

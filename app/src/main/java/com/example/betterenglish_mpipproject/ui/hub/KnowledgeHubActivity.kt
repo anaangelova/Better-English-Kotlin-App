@@ -1,4 +1,4 @@
-package com.example.betterenglish_mpipproject.domain.hub
+package com.example.betterenglish_mpipproject.ui.hub
 
 import android.content.Intent
 import android.net.Uri
@@ -20,7 +20,7 @@ class KnowledgeHubActivity : AppCompatActivity() {
 
 
         learnGrammarButton.setOnClickListener {
-            openWebPage("https://learnenglish.britishcouncil.org/grammar")
+            openInBrowser("https://learnenglish.britishcouncil.org/grammar")
         }
 
         learnVocabularyButton.setOnClickListener {
@@ -29,17 +29,24 @@ class KnowledgeHubActivity : AppCompatActivity() {
         }
 
         learnListeningButton.setOnClickListener {
-            openWebPage("https://learnenglish.britishcouncil.org/skills/listening")
+            openInBrowser("https://learnenglish.britishcouncil.org/skills/listening")
         }
 
     }
 
-    fun openWebPage(url: String) {
+    override fun onBackPressed() {
+        super.onBackPressed()
+        overridePendingTransition(R.anim.slide_in_left,
+            R.anim.slide_out_right)
+    }
+
+    private fun openInBrowser(url: String) {
         val webpage: Uri = Uri.parse(url)
         val intent = Intent(Intent.ACTION_VIEW, webpage)
         if (intent.resolveActivity(packageManager) != null) {
             startActivity(Intent.createChooser(intent, "Browse with"))
         }
     }
+
 
 }

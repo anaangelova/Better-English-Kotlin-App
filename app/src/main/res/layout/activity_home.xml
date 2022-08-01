@@ -238,9 +238,14 @@
                     android:layout_marginRight="10dp"
                     android:layout_marginBottom="10dp"
                     android:fontFamily="@font/archivo"
+                    android:maxLines="4"
+                    android:overScrollMode="ifContentScrolls"
+                    android:scrollbars="vertical"
+                    android:scrollHorizontally="false"
                     android:text="TextView"
                     android:textAlignment="textStart"
-                    android:textSize="18sp" />
+                    android:textSize="18sp"
+                    android:verticalScrollbarPosition="defaultPosition" />
 
             </RelativeLayout>
 

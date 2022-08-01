@@ -7,7 +7,7 @@
     android:layout_marginBottom="0dp"
     android:background="#EBFAFF"
     android:orientation="vertical"
-    tools:context=".domain.hub.KnowledgeHubActivity">
+    tools:context=".ui.hub.KnowledgeHubActivity">
 
     <RelativeLayout
         android:id="@+id/grammarContainer"

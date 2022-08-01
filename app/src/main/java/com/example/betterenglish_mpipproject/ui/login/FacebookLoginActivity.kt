@@ -47,14 +47,17 @@ class FacebookLoginActivity : Activity() {
                         } else {
                             Toast.makeText(baseContext, "Authentication failed.",
                                 Toast.LENGTH_SHORT).show()
-                            updateUI()
+                            navigateToLogin()
                         }
                     }
                 }
                 override fun onCancel() {
                     navigateToLogin()
                 }
-                override fun onError(error: FacebookException) {}
+                override fun onError(error: FacebookException) {
+                    Toast.makeText(baseContext, "Authentication failed.",
+                        Toast.LENGTH_SHORT).show()
+                }
             }
         )
 

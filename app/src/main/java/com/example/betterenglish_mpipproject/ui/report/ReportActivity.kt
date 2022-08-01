@@ -71,11 +71,13 @@ class ReportActivity : AppCompatActivity() {
                     dialog.dismiss()
                     val intent = Intent(this, HomeActivity::class.java)
                     startActivity(intent)
+                    overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left)
                     finish()
                 }
             } else {
                 val intent = Intent(this, HomeActivity::class.java)
                 startActivity(intent)
+                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left)
                 finish()
             }
 

@@ -85,6 +85,7 @@ class QuizActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
             quizActivityViewModel.addAttempt(attempt)
             val intent = Intent(this, HomeActivity::class.java)
             startActivity(intent)
+            overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right)
             finish()
         }
         dismissButton.setOnClickListener {
@@ -188,6 +189,7 @@ class QuizActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
                 intent.putExtra("successRate", successRate)
                 intent.putExtra("levelName", attempt.difficulty.name)
                 startActivity(intent)
+                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left)
                 finish()
             })
 
