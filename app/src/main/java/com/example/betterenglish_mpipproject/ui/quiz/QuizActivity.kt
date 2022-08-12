@@ -79,6 +79,7 @@ class QuizActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
 
         val dialog = builder.create()
         dialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+        dialog.show()
 
         quitQuizButton.setOnClickListener {
             attempt.status = AttemptStatus.CANCELLED
@@ -86,12 +87,12 @@ class QuizActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
             val intent = Intent(this, HomeActivity::class.java)
             startActivity(intent)
             overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right)
+            dialog.dismiss()
             finish()
         }
         dismissButton.setOnClickListener {
             dialog.dismiss()
         }
-        dialog.show()
     }
 
     override fun onInit(status: Int) {
